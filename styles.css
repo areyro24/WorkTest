@@ -1,0 +1,225 @@
+/* Estilo general */
+/* body {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+} */
+body {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+}
+
+
+/* Contenedor de la photocard */
+.container {
+    perspective: 1000px;
+    z-index: 10;
+    display: flex;
+    justify-content: center; /* Asegura que el contenedor se centre */
+    align-items: center; /* Asegura que el contenedor se centre */
+    height: 100%; /* Asegura que el contenedor ocupe toda la altura disponible */
+
+}
+
+/* Efecto combinado de rotación y zoom */
+.photocard {
+    width: 400px;
+    height: 500px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out; /* Transición suave para rotación y zoom */
+    cursor: pointer;
+}
+
+/* Cuando la card esté volteada, aplicar zoom y rotación */
+.photocard.flipped {
+    transform: rotateY(180deg)  /* Se aplica tanto la rotación como el zoom scale(0.2);*/
+}
+
+/* Lado frontal */
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    backface-visibility: hidden;
+}
+
+/* Imagen del frente */
+.front img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Lado trasero (carta) */
+.back {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+    padding: 20px;
+}
+
+/* Título de la carta */
+.title {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #ff4da6;
+}
+
+/* Mensaje */
+.message {
+    font-size: 1em;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Efecto de volteo */
+.flipped {
+    transform: rotateY(180deg);
+}
+
+
+
+/* Animación de entrada del mensaje */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.photo-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .photo {
+    position: absolute;
+    border: 8px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    opacity: 0.95;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .photo.small {
+    width: 120px;
+  }
+  
+  .photo.medium {
+    width: 170px;
+  }
+  
+  .rotate-left {
+    transform: rotate(-10deg);
+  }
+  
+  .rotate-right {
+    transform: rotate(8deg);
+  }
+  
+  
+.birthday-title {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 6px #ff69b4;
+    z-index: 1000;
+    animation: slideDown 1.2s ease-out;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+@keyframes slideDown {
+    0% { top: -60px; opacity: 0; }
+    100% { top: 20px; opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    body {
+      /* flex-direction: column; */
+      /* height: auto; */
+      padding-top: 225px;
+      padding-bottom: 40px;
+      position: relative;
+      justify-content: flex-start;
+    }
+  
+    .birthday-title {
+      font-size: 1.6em;
+      padding: 6px 14px;
+      top: 10px;
+      text-shadow: 1px 1px 4px #ff69b4;
+    }
+  
+    .container {
+        width: 90%; /* Asegura que el contenedor se ajuste al 90% del ancho de la pantalla */
+        display: flex;
+        justify-content: center; /* Centra el contenido */
+        align-items: center; /* Centra el contenido */
+        margin-top: 20px;
+    }
+  
+    .photocard {
+      width: 300px;
+      height: 415px;
+    }
+  
+    .back {
+      padding: 12px;
+    }
+  
+    .title {
+      font-size: 1.2em;
+    }
+  
+    .message {
+      font-size: 0.9em;
+    }
+  
+    .photo.small {
+      width: 70px;
+    }
+  
+    .photo.medium {
+      width: 100px;
+    }
+  
+    .photo {
+      border-width: 6px;
+      /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25); */
+    }
+  
+    /* .photo-decor {
+      display: none; /* puedes quitar esto si quieres mostrar las fotos decorativas en móviles 
+    } */
+  }
+  

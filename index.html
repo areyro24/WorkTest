@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h3 class="birthday-title"> 🎂 ❤️¡Feliz Cumpleaños Vale!❤️🎂</h3>
+    <div class="container">
+        
+
+        <div class="photocard" onclick="flipCard()">
+            <div class="front">
+                <img src="Vale2.jpg" alt="Photocard">
+            </div>
+            <div class="back">
+                <p class="title">🎉🎉 ¡Felices 24!🎉🎉 </p>
+                <p class="message">
+                    Holaa! Mi Vale preciosa y linda, espero que estes muy bien, me tome el tiempo de hacerte este pequeño detalle
+                    para que mi felicitacion sea superior jajaja, estoy muy feliz por que ya cumples tus 24,
+                    te deseo el mejor de los cumpleaños, espero que la pases increibleee.
+                    Que todos tus sueños se cumplan y sigas brillando como solo tu lo sabes hacer.  
+                    Eres una persona increible, muy importante para mi. Te quiero muchisimo, gracias por siempre ser 
+                    esa personita llena de luz, me siento agradecido por tenerte en mi vida.
+                    Espero que este año y todos los que estan por venir esten llenos de cosas buenas para ti.
+                    Te quierooo y te amo muchoooo
+                    <br>
+                    <br>
+                        -A
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="photo-decor">
+        <img src="idol.jpg" class="photo small rotate-left" style="top: 10%; left: 5%;">
+        <img src="idol4.jpeg" class="photo medium rotate-left" style="bottom: 10%; right: 5%;">
+        <img src="idol2.jpg" class="photo medium rotate-right" style="bottom: 15%; left: 8%;">
+        <img src="idol3.jpg" class="photo small rotate-right" style="top: 20%; right: 10%;">
+        
+      </div>
+      
+      
+      <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+  window.onload = () => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  };
+</script>
+    <script src="script.js"></script>
+</body>
+</html>
